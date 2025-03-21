@@ -1,0 +1,181 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg{
+    background-image: url(../showcasImg/screen1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  10px 20px;
+    margin-bottom: 50px;
+}
+.first{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+.first img{
+    width: 50px;
+    height: 50px;
+    color: #fff;
+}
+.first h1 {
+    padding: 10px;
+    font-size: 2rem;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul{
+    position: relative;
+    display: flex;
+    list-style: none;
+}
+ul li {
+    padding:  0 20px;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 23px;
+    color: #fff;
+}
+ul li a:hover{
+    color: rgb(114, 114, 114);
+}
+.icon i {
+    color: #fff;
+    font-size: 30px;
+    padding: 20px;
+    cursor: pointer;
+}
+.icon{
+    display: none;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        position: fixed; /* Change to fixed for better control */
+        top: 0;
+        right: -100%; /* Initially hide the menu off-screen to the right */
+        height: 100%; /* Full height for a sliding effect */
+        width: 250px; /* Set a fixed width for the menu */
+        display: flex;
+        flex-direction: column;
+        background: rgba(134, 134, 134, 0.118);
+        backdrop-filter: blur(50px);
+        gap: 10px;
+        padding: 20px 10px;
+        border-radius: 0; /* Remove border-radius for a full-height menu */
+        transition: right 0.5s ease; /* Smooth sliding effect */
+        overflow: hidden;
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    nav ul.active {
+        right: 0; /* Slide the menu into view */
+    }
+
+    .icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001; /* Ensure the icon is above the menu */
+    }
+}
+
+.main{
+    text-align: center;
+    float: right;
+}
+.main h1{
+    color: #fff;
+    font-size: 2.3rem;
+    margin-left: 5%;
+    padding: 5px;
+}
+.main h2{
+    color: #ff8800c7;
+    padding: 20px;
+    width: 500px;
+    margin-left: 10%;
+}
+.main p {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 20px 100px;
+    width: 500px;
+}
+
+.main {
+    text-align: center;
+    float: right;
+}
+.main h1 {
+    color: #fff;
+    font-size: 2.3rem;
+    margin-left: 5%;
+    padding: 5px;
+}
+.main h2 {
+    color: #ff8800c7;
+    padding: 20px;
+    width: 500px;
+    margin-left: 10%;
+}
+.main p {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 20px 100px;
+    width: 500px;
+}
+
+@media (max-width: 1024px) {
+    .main h2, .main p {
+        width: 400px;
+        margin-left: 5%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main h1 {
+        font-size: 2rem;
+        margin-left: 0;
+    }
+    .main h2, .main p {
+        width: 100%;
+        margin-left: 1px;
+        font-size: 20px;
+        /* margin-right: auto; */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main h1 {
+        font-size: 1.8rem;
+    }
+    .main h2 {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    .main p {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+}

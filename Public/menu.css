@@ -1,0 +1,263 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Tektur:wght@400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+:root{
+  --text-color:#999;
+  --background:#fff;
+  --icon-color:rgba(255, 247, 24, 0.91);
+  --logo-color:#2e2e2e;
+  --button-background:red;
+  --card-background:#fff;
+}
+
+body{
+  background-color: var(--background);
+}
+
+
+.darkMode{
+  --text-color:#989898;
+  --background:#000000;
+  --icon-color:rgb(238, 255, 0);
+  --logo-color:#ffffff;
+  --button-background:rgb(255, 255, 255);
+  --card-background:#606060;
+}
+.logo{
+  text-align: center;
+  padding: 20px;
+  color: var(--logo-color);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  
+}
+
+header .nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px;
+  align-items: center;
+}
+.nav .search{
+  width: 400px;
+  border-radius: 4px;
+  border: 1px solid #999;
+  height: 50px;
+}
+.nav .search::placeholder{
+  padding-left: 20px;
+  font-size: 15px;
+}
+.nav ul{
+  display: flex;
+  align-items: center;
+}
+.nav ul li{
+  list-style: none;
+  background-color: rgb(246, 246, 246);
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.nav ul li:first-child{
+  background-color: rgb(219, 39, 39);
+}
+#mode{
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  background-color: #999;
+  text-align: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  padding-left: 7px;
+  font-size: 1.5rem;
+}
+.darkMode #mode i:first-child{
+  display: none;
+}
+.darkMode #mode i:last-child{
+  display: block;
+}
+#mode i:last-child{
+  display: none;
+}
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  header {
+      padding: 10px 40px;
+  }
+
+  .nav .search {
+      width: 300px;
+  }
+
+  .nav ul {
+      gap: 5px;
+  }
+
+  .nav ul li {
+      padding: 8px 15px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+  }
+
+  .nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+  }
+
+  .nav .search {
+      width: 100%;
+  }
+
+  .nav ul {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .nav ul li {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  header {
+      padding: 10px;
+  }
+
+  .nav .search {
+      width: 100%;
+      height: 40px;
+  }
+
+  .nav ul li {
+      padding: 8px;
+  }
+}
+
+/* main */
+.main{
+  width: 100%;
+  padding-top: 30px;
+  padding-left: 6%;
+}
+.main .container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+div.polaroid {
+  width: 80%;
+  background-color: var(--card-background);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  border-radius: 4px;
+}
+
+div.info {
+  text-align: center;
+  padding: 10px 20px;
+}
+div.info h1{
+  color: var(--logo-color);
+  font-size: 1.5rem;
+  padding: 5px;
+}
+div.info h2{
+  margin-bottom: 5px;
+}
+div.info h2 span{
+  color: var(--text-color);
+  padding-left: 10%;
+}
+div.info p{
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+div.info h3{
+  color: var(--icon-color);
+}
+div.info .btn{
+  padding: 10px 20px;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+div.info .btn:hover{
+  background-color: rgb(157, 4, 4);
+}
+/* Default for large screens */
+.main .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .main .container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .main .container {
+      grid-template-columns: 1fr; /* 1 column for small screens */
+      gap: 15px; /* Increase gap for better spacing */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .main .container {
+      grid-template-columns: 1fr; /* Still 1 column for extra small screens */
+      padding: 10px; /* Add padding for better spacing */
+  }
+
+  div.polaroid {
+      width: 80%; /* Ensure cards take full width */
+      margin-left: 5%;
+  }
+
+  div.info h1 {
+      font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
+  div.info p {
+      font-size: 14px; /* Adjust paragraph font size */
+  }
+
+  div.info .btn {
+      padding: 8px 15px; /* Adjust button size */
+  }
+}
